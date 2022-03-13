@@ -7,7 +7,7 @@ import FacebookBtn from '../components/login/FacebookBtn'
 import { useCustomErr } from '../utils/customHooks';
 import Link from 'next/link';
 
-export default function login() {
+export default function Login() {
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
     const [err, seterr] = useCustomErr('')
@@ -47,7 +47,7 @@ export default function login() {
                     </form>
                 </div>
                 <div className="mt-4">
-                    <p className='text-center text-gray-500 text-sm'>Dont't have an account? <Link href='/signup'><a className='text-blue-500'>Sign up</a></Link></p>
+                    <p className="text-center text-gray-500 text-sm">Dont have an account? <Link href="/signup"><a className="text-blue-500">Sign up</a></Link></p>
                 </div>
                 <div className="mt-4">
                     <p className='text-center text-gray-500 text-sm'>Or continue with social profile</p>

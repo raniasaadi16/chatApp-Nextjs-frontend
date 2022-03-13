@@ -1,5 +1,5 @@
-//const url = 'https://hidden-peak-16501.herokuapp.com/api'
-const url = 'http://localhost:5000/api'
+const url = 'https://chat-app-rania.herokuapp.com/api'
+//const url = 'http://localhost:5000/api'
 export const checkAuthToken = async (token) => {
     try{
         const res = await fetch(`${url}/users/isLoggedin/${token}`, {
@@ -64,7 +64,7 @@ export const loginRequest = async ({email, password}) => {
             body: JSON.stringify({email, password}),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })
@@ -85,7 +85,7 @@ export const register = async ({firstName, lastName, email, password, passwordCo
             body: JSON.stringify({firstName, lastName, email, password, passwordConfirm}),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })
@@ -106,7 +106,7 @@ export const GLogin = async (response) => {
             body: JSON.stringify({tokenId: response.tokenId}),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })    
@@ -127,7 +127,7 @@ export const FbLogin = async ({accessToken, userID}) => {
             body: JSON.stringify({accessToken, userID}),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })    
@@ -232,7 +232,7 @@ export const sendMessage = async (message, roomId) => {
             body: JSON.stringify(message),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })
@@ -253,7 +253,7 @@ export const createRoom = async (roomData) => {
             body: JSON.stringify(roomData),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })
@@ -293,7 +293,7 @@ export const signUp = async (userData) => {
             body: JSON.stringify(userData),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })
@@ -334,7 +334,7 @@ export const updateMe = async (userData) => {
             method: 'POST',
             body: userData,
             headers:{
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })
@@ -355,7 +355,7 @@ export const updatePassword = async (userData) => {
             body: JSON.stringify(userData),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "https://chat-app-rania.herokuapp.com"
             },
             credentials: "include",
         })

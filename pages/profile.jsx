@@ -2,7 +2,7 @@ import React from 'react'
 import SideBar from '../components/sideBar/SideBar'
 import { checkAuth, getAllRooms } from '../utils/Apicalls'
 
-export default function profile({rooms,user}) {
+export default function Profile({rooms,user}) {
     return (
         <div className="md:flex">
             <SideBar rooms={rooms} user={user}/>

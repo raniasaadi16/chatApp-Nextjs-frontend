@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Icon } from '@iconify/react';
 import { register } from '../utils/Apicalls';
 import { useRouter } from 'next/router';
@@ -7,7 +7,7 @@ import FacebookBtn from '../components/login/FacebookBtn'
 import { useCustomErr } from '../utils/customHooks';
 import Link from 'next/link';
 
-export default function signup() {
+export default function Signup() {
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
     const [passwordConfirm, setpasswordConfirm] = useState('');

@@ -15,7 +15,7 @@ export default function GoogleBtn({seterr, signup}) {
         }
     }
     const responseFailGoogle = (response) => {
-       //console.log(response)
+       console.log(response)
     }
   return <GoogleLogin className='w-full flex justify-center rounded-sm'
     clientId={process.env.NEXT_PUBLIC_GAUTH_API}

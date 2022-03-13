@@ -41,7 +41,7 @@ export default function RoomChat({user, chatRoom, messages}) {
       }) 
     }
     return didcancel = true
-  }, [socket]);
+  }, [socket, user._id]);
   // if the user is already a member of the room , join him to room socket server,if he join or leave the room send the information to all users
   useEffect(() => {
     let didCancel = false;
@@ -69,7 +69,7 @@ export default function RoomChat({user, chatRoom, messages}) {
     return () => {
       clearTimeout(detect)
     }
-  }, [newMessage]);
+  }, [newMessage, room]);
   // leave channel
   const leaveChannel = async () => {
     setloading(true)

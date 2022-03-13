@@ -3,7 +3,7 @@ import Header from './Header'
 import Rooms from './Rooms'
 import Search from './Search'
 import Bottom from './Bottom'
-import Close from './close'
+import Close from './Close'
 export default function SideBar({rooms, user, hiddBar, sethiddBar}) {
     return (
         <div className={`${hiddBar && 'hidden'} md:block w-11/12 bg-darker lg:relative absolute z-10 h-screen md:w-[324px]`}>

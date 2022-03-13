@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Header from './Header'
 import Image from 'next/image'
 import Bottom from './Bottom'
-import Close from './close'
+import Close from './Close'
 
 export default function RoomBar({room, onlineUsers, user, hiddBar, sethiddBar}) {
 

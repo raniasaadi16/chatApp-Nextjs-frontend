@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 //import { checkAuthToken } from '../utils/Apicalls'
 
-export default async function middleware(req) {
+export default async function middleware(req : NextRequest) {
     const { pathname } = req.nextUrl
     console.log(req.cookies)
     
@@ -9,9 +9,7 @@ export default async function middleware(req) {
         const res = await fetch(`https://chat-app-rania.herokuapp.com/api/users/isLoggedin/${req.cookies.jwt}`, {
             method: 'GET',
             credentials:'include',
-            headers: {
-                'Access-Control-Allow-Credentials': true
-            },
+            
         })
         const data = await res.json()
         if(!res.ok){

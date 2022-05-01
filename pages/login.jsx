@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Icon } from '@iconify/react';
-import { loginRequest } from '../utils/Apicalls';
+import { checkAuth, checkAuthTest, loginRequest } from '../utils/Apicalls';
 import { useRouter } from 'next/router';
 import GoogleBtn from '../components/login/GoogleBtn'
 import FacebookBtn from '../components/login/FacebookBtn'
@@ -15,13 +15,19 @@ export default function Login() {
     const handleSubmit = async e =>{
         e.preventDefault();
         const data =  await loginRequest({email, password})
-        if(data.user){
-            router.push('/')
-        }else{
-            seterr(data)
-        }
+        // if(data.user){
+        //     router.push('/')
+        // }else{
+        //     seterr(data)
+        // }
 
     }
+
+
+    // useEffect(async () => {
+    //     const data = await checkAuthTest()
+    //     console.log(data)
+    // }, []);
 
 
     return (
@@ -61,3 +67,13 @@ export default function Login() {
     )
 }
 
+export async function getServerSideProps(context){
+    const data = await checkAuth(context.req)
+    // console.log(context.req.cookies)
+    // console.log(context.req.headers)
+    return {
+      props: {
+        user: data.data.user,
+      }
+    }
+  }

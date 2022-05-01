@@ -37,6 +37,24 @@ export const checkAuth = async (req) => {
         return console.log(err)
     }
 }
+export const checkAuthTest = async () => {
+    try{
+        const res = await fetch(`${url}/users/isLoggedin`, {
+            method: 'GET',
+            credentials:'include',
+            headers: {
+                'Access-Control-Allow-Credentials': true,
+            },
+        })
+        const data = await res.json()
+        if(!res.ok){
+            throw data 
+        }
+        return data   
+    }catch(err){
+        return console.log(err)
+    }
+}
 export const logout = async () =>{
     try{
         const res = await fetch(`${url}/users/logout`, {
@@ -64,7 +82,8 @@ export const loginRequest = async ({email, password}) => {
             body: JSON.stringify({email, password}),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "http://localhost:3000"
+                "Access-Control-Allow-Origin": "http://localhost:3000",
+                'Access-Control-Allow-Credentials': true
             },
             credentials: "include",
         })

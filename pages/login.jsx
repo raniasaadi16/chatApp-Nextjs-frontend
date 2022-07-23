@@ -24,10 +24,10 @@ export default function Login() {
     }
 
 
-    // useEffect(async () => {
-    //     const data = await checkAuthTest()
-    //     console.log(data)
-    // }, []);
+    useEffect(async () => {
+        const data = await checkAuthTest()
+        console.log(data)
+    }, []);
 
 
     return (

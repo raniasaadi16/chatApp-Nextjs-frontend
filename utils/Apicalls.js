@@ -27,6 +27,7 @@ export const checkAuth = async (req) => {
             credentials:'include',
             headers: {
                 'Access-Control-Allow-Credentials': true,
+                "Access-Control-Allow-Origin": "https://chat-app-frontendnext.herokuapp.com",
                 Cookie: req.headers.cookie
             },
         })

@@ -83,7 +83,7 @@ export const loginRequest = async ({email, password}) => {
             body: JSON.stringify({email, password}),
             headers:{
                 'Content-Type': 'application/json',
-                "Access-Control-Allow-Origin": "https://chat-app-nextjs-frontend.vercel.app",
+                "Access-Control-Allow-Origin": "https://chat-app-frontendnext.herokuapp.com",
                 'Access-Control-Allow-Credentials': true
             },
             credentials: "include",

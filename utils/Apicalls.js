@@ -12,7 +12,7 @@ export const checkAuthToken = async (token) => {
         })
         const data = await res.json()
         if(!res.ok){
-            throw data 
+            throw data  
         }
         return data   
     }catch(err){

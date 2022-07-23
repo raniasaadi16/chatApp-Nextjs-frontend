@@ -1,6 +1,6 @@
-//const url = 'https://chat-app-rania.herokuapp.com/api'
+const url = 'https://chat-app-rania.herokuapp.com/api'
 //const url = 'http://localhost:5000/api'
-const url = "https://chat-app-nextjs-backend.vercel.app/api"
+// const url = "https://chat-app-nextjs-backend.vercel.app/api"
 export const checkAuthToken = async (token) => {
     try{
         const res = await fetch(`${url}/users/isLoggedin/${token}`, {

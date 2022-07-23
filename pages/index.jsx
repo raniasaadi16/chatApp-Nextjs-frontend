@@ -33,7 +33,9 @@ export default function Home({user, rooms}) {
 export async function getServerSideProps(context){
   const data = await checkAuth(context.req)
   const rooms = await getAllRooms(context.req)
-  console.log(context.req)
+  console.log(context.req.headers)
+  console.log(context.req.cookies)
+
 
 
   return {

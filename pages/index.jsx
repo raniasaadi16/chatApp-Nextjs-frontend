@@ -37,6 +37,8 @@ export async function getServerSideProps(context){
   console.log(context.req.headers)
   console.log(context.req.cookies)
   console.log(dataTest)
+  console.log(data)
+
 
 
   return {

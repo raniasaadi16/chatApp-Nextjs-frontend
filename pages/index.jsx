@@ -1,7 +1,7 @@
 import { Icon } from "@iconify/react"
 import { useState } from "react";
 import SideBar from "../components/sideBar/SideBar"
-import { checkAuth, getAllRooms } from "../utils/Apicalls"
+import { checkAuth, checkAuthTest, getAllRooms } from "../utils/Apicalls"
 
 
 export default function Home({user, rooms}) {
@@ -33,9 +33,10 @@ export default function Home({user, rooms}) {
 export async function getServerSideProps(context){
   const data = await checkAuth(context.req)
   const rooms = await getAllRooms(context.req)
+  const dataTest = await checkAuthTest()
   console.log(context.req.headers)
   console.log(context.req.cookies)
-
+  console.log(dataTest)
 
 
   return {

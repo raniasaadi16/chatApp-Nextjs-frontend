@@ -31,14 +31,27 @@ export default function Home({user, rooms}) {
 }
 
 export async function getServerSideProps(context){
-  const data = await checkAuth(context.req)
-  const rooms = await getAllRooms(context.req)
-  const dataTest = await checkAuthTest()
   console.log(context.req.headers)
   console.log(context.req.cookies)
-  console.log(dataTest)
-  console.log(data)
 
+  let user
+  try{
+      const res = await fetch(`${url}/users/isLoggedin`, {
+          method: 'GET',
+          credentials:'include',
+          headers: {
+              'Access-Control-Allow-Credentials': true,
+              Cookie: req.headers.cookie
+          },
+      })
+      const data = await res.json()
+      if(!res.ok){
+          throw data 
+      }
+      user = data  
+  }catch(err){
+      return console.log(err)
+  }
 
 
   return {

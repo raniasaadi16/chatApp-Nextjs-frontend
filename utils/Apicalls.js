@@ -24,7 +24,7 @@ export const checkAuth = async (req) => {
     try{
         const res = await fetch(`${url}/users/isLoggedin`, {
             method: 'GET',
-            credentials:'include',
+            credentials:'same-origin',
             headers: {
                 'Access-Control-Allow-Credentials': true,
                 Cookie: req.headers.cookie
@@ -87,7 +87,7 @@ export const loginRequest = async ({email, password}) => {
                 "Access-Control-Allow-Origin": "https://chat-app-frontendnext.herokuapp.com",
                 'Access-Control-Allow-Credentials': true
             },
-            credentials: "include",
+            credentials: "same-origin",
         })
         const data = await res.json()
         if(!res.ok){

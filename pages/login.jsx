@@ -15,11 +15,11 @@ export default function Login() {
     const handleSubmit = async e =>{
         e.preventDefault();
         const data =  await loginRequest({email, password})
-        // if(data.user){
-        //     router.push('/')
-        // }else{
-        //     seterr(data)
-        // }
+        if(data.user){
+            router.push('/')
+        }else{
+            seterr(data)
+        }
 
     }
 

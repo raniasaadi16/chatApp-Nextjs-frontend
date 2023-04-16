@@ -24,10 +24,10 @@ export default function Login() {
     }
 
 
-    useEffect(async () => {
-        const data = await checkAuthTest()
-        console.log(data)
-    }, []);
+    // useEffect(async () => {
+    //     const data = await checkAuthTest()
+    //     console.log(data)
+    // }, []);
 
 
     return (
@@ -68,7 +68,7 @@ export default function Login() {
 }
 
 export async function getServerSideProps(context){
-    const data = await checkAuth(context.req)
+    const data = await checkAuthTest()
     console.log('***********',context.req.cookies)
 
     // console.log(context.req.headers)

@@ -70,6 +70,8 @@ export default function Login() {
 export async function getServerSideProps(context){
     const data = await checkAuth(context.req)
     console.log('***********',context.req.headers)
+    console.log('***********cookies',context.req.cookies)
+
 
     // console.log(context.req.headers)
     return {

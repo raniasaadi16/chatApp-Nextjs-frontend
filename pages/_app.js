@@ -1,8 +1,8 @@
 import { Router } from 'next/router'
 import { useState } from 'react'
-import 'tailwindcss/tailwind.css'
+// import 'tailwindcss/tailwind.css'
 import Loading from '../components/layout/Loading'
-import '../styles/globals.css'
+// import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }) {
   const [loading, setloading] = useState(false)

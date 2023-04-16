@@ -49,3 +49,4 @@ export default function AddChannel({setisOpen}) {
       </div>
   )
 }
+

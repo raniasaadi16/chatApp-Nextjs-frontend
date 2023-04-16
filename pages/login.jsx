@@ -6,8 +6,9 @@ import GoogleBtn from '../components/login/GoogleBtn'
 import FacebookBtn from '../components/login/FacebookBtn'
 import { useCustomErr } from '../utils/customHooks';
 import Link from 'next/link';
-
-export default function Login() {
+import cookie from "cookie";
+export default function Login({mycookie}) {
+    console.log(mycookie)
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
     const [err, seterr] = useCustomErr('')
@@ -72,11 +73,16 @@ export async function getServerSideProps(context){
     console.log('***********',context.req.headers.cookie)
     console.log('***********cookies',context.req.cookies)
 
+    const mycookie = cookie.parse(
+        (context.req && context.req.headers.cookie) || ""
+      );
 
-    // console.log(context.req.headers)
+
+    console.log(mycookie)
     return {
       props: {
         user: data.data.user,
+        mycookie
       }
     }
   }

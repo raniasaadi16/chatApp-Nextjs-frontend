@@ -16,7 +16,7 @@ export default function Login() {
         e.preventDefault();
         const data =  await loginRequest({email, password})
         if(data.user){
-            router.push('/')
+            // router.push('/')
         }else{
             seterr(data)
         }
@@ -69,7 +69,8 @@ export default function Login() {
 
 export async function getServerSideProps(context){
     const data = await checkAuth(context.req)
-    console.log(context.req.cookies)
+    console.log('***********',context.req.cookies)
+
     // console.log(context.req.headers)
     return {
       props: {

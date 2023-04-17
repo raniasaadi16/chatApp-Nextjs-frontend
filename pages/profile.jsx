@@ -24,8 +24,8 @@ export default function Profile({rooms,user}) {
 
 
 export async function getServerSideProps(context){
-    const data = await checkAuth(context.req)
-    const rooms = await getAllRooms(context.req)
+    const data = await checkAuth(context.req.cookies)
+    const rooms = await getAllRooms(context.req.cookies)
   
     return {
       props: {

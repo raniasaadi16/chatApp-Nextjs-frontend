@@ -149,9 +149,9 @@ export default function RoomChat({user, chatRoom, messages}) {
 }
 
 export async function getServerSideProps(context){
-  const data = await checkAuth(context.req)
-  const room = await getRoom(context.req, context.query.id)
-  const messages = await getMessages(context.req, context.query.id)
+  const data = await checkAuth(context.req.cookies)
+  const room = await getRoom(context.req.cookies, context.query.id)
+  const messages = await getMessages(context.req.cookies, context.query.id)
 
   return {
     props: {

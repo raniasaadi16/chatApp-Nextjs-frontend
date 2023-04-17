@@ -21,14 +21,14 @@ export const checkAuthToken = async (token) => {
         return console.log(err)
     }
 }
-export const checkAuth = async (req) => {
+export const checkAuth = async (cookie) => {
     try{
         const res = await fetch(`${url}/users/isLoggedin`, {
             method: 'GET',
             headers: {
                 'Access-Control-Allow-Credentials': true,
                 "Access-Control-Allow-Origin": "https://chat-app.raniadev.com",
-                Cookie: req.headers.cookie
+                Cookie: cookie?.jwt
             },
             credentials:'include',
         })
@@ -165,14 +165,14 @@ export const FbLogin = async ({accessToken, userID}) => {
 }
 
 
-export const getAllRooms = async (req) => {
+export const getAllRooms = async (cookie) => {
     try{
         const res = await fetch(`${url}/rooms`, {
             method: 'GET',
             credentials:'include',
             headers: {
                 'Access-Control-Allow-Credentials': true,
-                Cookie: req.headers.cookie
+                Cookie: cookie?.jwt
             }
         })
         const data = await res.json()
@@ -186,14 +186,14 @@ export const getAllRooms = async (req) => {
     }
 }
 
-export const getRoom = async (req, roomId) => {
+export const getRoom = async (cookie, roomId) => {
     try{
         const res = await fetch(`${url}/rooms/${roomId}`, {
             method: 'GET',
             credentials:'include',
             headers: {
                 'Access-Control-Allow-Credentials': true,
-                Cookie: req.headers.cookie
+                Cookie: cookie?.jwt
             }
         })
         const data = await res.json()
@@ -227,14 +227,14 @@ export const joinRoom = async (roomId) => {
     }
 }
 
-export const getMessages = async (req, roomId) => {
+export const getMessages = async (cookie, roomId) => {
     try{
         const res = await fetch(`${url}/rooms/${roomId}/messages`, {
             method: 'GET',
             credentials:'include',
             headers: {
                 'Access-Control-Allow-Credentials': true,
-                Cookie: req.headers.cookie
+                Cookie: cookie?.jwt
             }
         })
         const data = await res.json()
@@ -330,14 +330,14 @@ export const signUp = async (userData) => {
     }
 }
 
-export const getMe = async (req) => {
+export const getMe = async (cookie) => {
     try{
         const res = await fetch(`${url}/users/getMe`, {
             method: 'GET',
             credentials:'include',
             headers: {
                 'Access-Control-Allow-Credentials': true,
-                Cookie: req.headers.cookie
+                Cookie: cookie?.jwt
             }
         })
         const data = await res.json()

@@ -68,8 +68,9 @@ export default function Login({mycookie}) {
 }
 
 export async function getServerSideProps(context){
-    const data = await checkAuth(context.req)
+    const data = await checkAuth(context.req.cookies)
     console.log('***********',context.req.headers)
+
     console.log('***********cookies',context.req.cookies)
 
     

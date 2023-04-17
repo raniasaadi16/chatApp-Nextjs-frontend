@@ -8,7 +8,6 @@ import { useCustomErr } from '../utils/customHooks';
 import Link from 'next/link';
 import cookie from "cookie";
 export default function Login({mycookie}) {
-    console.log(mycookie)
     const [email, setemail] = useState('');
     const [password, setpassword] = useState('');
     const [err, seterr] = useCustomErr('')
@@ -70,19 +69,13 @@ export default function Login({mycookie}) {
 
 export async function getServerSideProps(context){
     const data = await checkAuth(context.req)
-    console.log('***********',context.req.headers.cookie)
+    console.log('***********',context.req.headers)
     console.log('***********cookies',context.req.cookies)
 
-    const mycookie = cookie.parse(
-        (context.req && context.req.headers.cookie) || ""
-      );
-
-
-    console.log(mycookie)
+    
     return {
       props: {
         user: data.data.user,
-        mycookie
       }
     }
   }

@@ -25,12 +25,12 @@ export const checkAuth = async (req) => {
     try{
         const res = await fetch(`${url}/users/isLoggedin`, {
             method: 'GET',
-            credentials:'include',
             headers: {
                 'Access-Control-Allow-Credentials': true,
                 "Access-Control-Allow-Origin": "https://chat-app.raniadev.com",
                 Cookie: req.headers.cookie
             },
+            credentials:'include',
         })
         const data = await res.json()
         if(!res.ok){

@@ -22,7 +22,7 @@ export default function RoomChat({user, chatRoom, messages}) {
   
   // connect to socket
   useEffect(() => {
-    setsocket(io('http://localhost:5000'))
+    setsocket(io('https://chat-app-backend.raniadev.com'))
   },[])
   // when user is connected set his status to online and send this status to all connected users
   ///*************************************************USE CLENUP FOR USEFEEVT*********************************************************** */

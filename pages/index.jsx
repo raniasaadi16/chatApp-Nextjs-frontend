@@ -9,7 +9,7 @@ export default function Home({user, rooms}) {
 
   return (
     <div className="md:flex">
-      {/* <SideBar rooms={rooms} user={user} hiddBar={hiddBar} sethiddBar={sethiddBar}/>
+      <SideBar rooms={rooms} user={user} hiddBar={hiddBar} sethiddBar={sethiddBar}/>
       <div className="md:ml-[324px] lg:ml-0 md:flex-auto">
         <div className="py-3 px-5 shadow-md flex justify-between items-center">
           <p>Chat APP</p>
@@ -25,7 +25,7 @@ export default function Home({user, rooms}) {
               <h3 className="mt-4 font-bold text-xl">Please choose a Channel to start chating</h3>
           </div>
         </div>
-      </div> */}
+      </div>
     </div>
   )
 }
